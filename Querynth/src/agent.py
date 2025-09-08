@@ -7,7 +7,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 engine = create_engine('sqlite:///analyst.db')
-llm = ChatOpenAI(model="gpt-4o")
+
+llm = ChatOpenAI(model="gpt-4o", api_key=)
 
 # Tool for SQL execution
 def execute_sql(query, table_name):
@@ -15,7 +16,7 @@ def execute_sql(query, table_name):
         df = pd.read_sql_query(query, engine)
         return df.to_json(orient='records')  # Return as JSON for LLM
     except Exception as e:
-        return f"Error: {e}"
+        return f"Error  11: {e}"
 
 sql_tool = Tool(
     name="execute_sql",

@@ -3,7 +3,7 @@ from langchain.prompts import PromptTemplate
 from sqlalchemy import text
 import sqlparse  # For validation
 
-llm = ChatOpenAI(model="gpt-4o", api_key="")  # Or use xAI's API equivalent
+llm = ChatOpenAI(model="gpt-4o", api_key=)  # Or use xAI's API equivalent
 
 SCHEMA_PROMPT = PromptTemplate(
     input_variables=["schema", "question"],
